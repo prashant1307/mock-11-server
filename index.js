@@ -2,7 +2,7 @@ const express = require("express")
 const mongoose = require("mongoose")
 const UserModel = require("./models/User.model")
 const jwt=require("jsonwebtoken")
-
+const PORT = process.env.PORT || 8080;
 const cors=require("cors");
 
 
@@ -42,6 +42,6 @@ app.post("/login",async(req,res)=>{
 
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/mock-11").then(() => {
-    app.listen(8080, () => { console.log('server started on port 8080') })
+mongoose.connect("mongodb+srv://prashant:qwerty123@cluster0.60vk8lg.mongodb.net/?retryWrites=true&w=majority").then(() => {
+    app.listen(PORT, () => { console.log('server started on port 8080') })
 })
